@@ -9,7 +9,7 @@ def team_details():
                                      \t Team- ID : ARTH2020_16_18
                                      \t Team member: 
                                           1 Arpit Sironiya (Team Leader) 
-                                          2 Deeksha Gautam
+                                          2 Deeksha M Gautam
                                           3 Deepanshu Gurdasani
                                           4 Rupal Singh
     """)
