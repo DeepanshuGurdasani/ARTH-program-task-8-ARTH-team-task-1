@@ -7,13 +7,13 @@ from remote_functions_file import *
 team_details()
 a=1
 while(a==1):
-    print("\t\t\tHello and welcome to the Menu ")
-    choice=input("Enter where you want to perform the opertaion(local/remote)")
+    print("\t\t\tHello and Welcome to the Menu ")
+    choice=input("Enter where you want to perform the opertaions(local/remote):")
     if ("local" in choice.lower()):
         b=1
         while(b==1):
             main_menu_options()
-            ch1=int(input("enter any option number from above options"))
+            ch1=int(input("Enter any number from above options"))
             if ch1 == 1:
                 basic_operation()
             elif ch1==2:
@@ -44,7 +44,7 @@ while(a==1):
         c=1
         while(c==1):
             main_menu_options()
-            ch1=int(input("enter any option number from above options"))
+            ch1=int(input("Enter any number from above options"))
             if ch1 == 1:
                rm_basic_operation(ip_address)
             elif ch1==2:
