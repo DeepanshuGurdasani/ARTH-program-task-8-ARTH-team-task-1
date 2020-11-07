@@ -16,7 +16,7 @@ def rm_docker_management(ip_address):
 
         """)
         print("***********************************************************************************************")
-        ch1_docker=int(input("please select any option number from the above options :"))
+        ch1_docker=int(input("Please select any option from the above options :"))
         if ch1_docker==1:
             docker_cmd_download = os.system("ssh {} rpm -q docker-ce".format(ip_address))
             if docker_cmd_download != 0 :
@@ -40,14 +40,14 @@ def rm_docker_management(ip_address):
         elif ch1_docker==4:
             os.system("ssh {} docker images".format(ip_address))
         elif ch1_docker==5:
-            docker_name = input("Enter the container name or ID of that you want to remove ")
+            docker_name = input("Enter the container name or ID that you want to remove ")
             os.system("ssh {} docker rm -f {}".format(ip_address,docker_name))
         elif ch1_docker==6:
            os.system("ssh {} docker rm -f $(docker ps -aq)".format(ip_address))
         elif ch1_docker==7:
             os.system("ssh {} systemctl stop docker".format(ip_address))
         elif ch1_docker==8:
-            docker_name = input("Enter name which you want to give :- ")
+            docker_name = input("Enter name you want to give :- ")
             image_name = input("Enter image name :- ")
             tag = input("Enter Image tag :- ")
             os.system("ssh {} docker run -dit --name {} {}:{}".format(ip_address,docker_name,image_name,tag))
@@ -87,7 +87,7 @@ def rm_networking(ip_address):
         elif op=='h':
             break
         else :
-            os.system("Enter corrext option")
+            os.system("Enter correct option")
 def rm_package_management(ip_address):
     while(1):
         print("*******************************************Package Management*********************************** ")
@@ -100,12 +100,12 @@ def rm_package_management(ip_address):
 
         """)
         print("***********************************************************************************************")
-        ch1_pkg=int(input("please select any option number from the above options :"))
+        ch1_pkg=int(input("please select any option from above options :"))
         if ch1_pkg==1:
-            package = input("Enter Package Name Which that Want To Check : ")
+            package = input("Enter Package Name Which you Want To Check : ")
             os.system("ssh {} rpm -q {}".format(ip_address,package))
         elif ch1_pkg ==2 :
-            pack1=input("Enter Package Name Which that you  Want To install : ")
+            pack1=input("Enter Package Name Which you  Want To install : ")
             check_pack = os.system("ssh {} rpm -q {}".format(ip_address,pack1))
             if check_pack != 0 :
                 print(" The package {} is not installed in your system  ".format(check_pack))
@@ -114,19 +114,19 @@ def rm_package_management(ip_address):
             else : 
                 print("{} already in our system".format(check_pack))
         elif ch1_pkg ==3:
-            pack2=input("Enter Package Name Which that you  Want To remove : ")
+            pack2=input("Enter Package Name Which you  Want To remove : ")
             check_pack1 = os.system("ssh {} rpm -q {}".format(ip_address,pack2))
             if check_pack1 != 0 :
                 print(" The package {} not installed in your system  ".format(check_pack1))
                 print("wait till it is remove")
                 os.system("ssh {} dnf remove {} -y".format(ip_address,check_pack1))
             else:
-                print("you does not have {} in your system".format(check_pack1))
+                print("you do not have {} in your system".format(check_pack1))
 
         elif ch1_pkg==4:
             break
         else :
-            os.system("Enter corrext option")    
+            os.system("Enter correct option")    
 def rm_basic_operation(ip_address):
     while True:
         input("Enter To Continue...")
@@ -156,12 +156,12 @@ def rm_basic_operation(ip_address):
         elif int(ch)==3:
                     os.system("ssh {} yum install httpd". format(ip_address))
         elif int(ch)==4:
-                    print("Enter user name which you want to be create:")
+                    print("Enter user name which you want to create:")
                     createUser =input()
                     os.system("ssh {} useradd {}" . format(ip_address,createUser))
                     print("{} User is created successffuly".format(createUser))
         elif int(ch)==5:
-                    print("Enter user name which you want to be delete")
+                    print("Enter user name which you want to delete")
                     delete_user = input()
                     os.system("ssh {} userdel {}" . format(ip_address,delete_user))
                     print("{} User deleted successfully".format(delete_user))
@@ -172,7 +172,7 @@ def rm_basic_operation(ip_address):
 
     else:
         print("Invalid menu Option, Try Again ")
-        input("Enter To conti..")
+        input("Enter To continue.. ")
 def rm_aws_management(ip_address):
     while(1):
         print("   ------- Welcome to AWS services -------  ")
