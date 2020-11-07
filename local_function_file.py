@@ -33,7 +33,7 @@ def docker_management():
                         os.system("firewall-cmd  --permanent --zone=public --add-masquerade")
                         os.system("firewall-cmd --reload")
                         os.system("systemctl restart docker")
-                        print("Docker is successfully Installed in your system")
+                        print("Docker is successfully installed in your system")
         elif ch1_docker==2:
             os.system("systemctl start docker")
         elif ch1_docker==3:
@@ -88,7 +88,7 @@ def networking():
         elif op=='h':
             break
         else :
-            os.system("Enter corrext option")
+            os.system("Enter correct option")
 def package_management():
     while(1):
         print("*******************************************Package Management*********************************** ")
@@ -103,10 +103,10 @@ def package_management():
         print("***********************************************************************************************")
         ch1_pkg=int(input("please select any option number from the above options :"))
         if ch1_pkg==1:
-            package = input("Enter Package Name Which that Want To Check : ")
+            package = input("Enter Package Name Which you Want To Check : ")
             os.system("rpm -q {}".format(package))
         elif ch1_pkg==2:
-            pack1=input("Enter Package Name Which that you  Want To install : ")
+            pack1=input("Enter Package Name Which you  Want To install : ")
             check_pack = os.system("rpm -q {}".format(pack1))
             if check_pack != 0 :
                 print(" The package {} is not installed in your system  ".format(check_pack))
@@ -127,7 +127,7 @@ def package_management():
         elif ch1_pkg==4:
             break
         else :
-            os.system("Enter corrext option")     
+            os.system("Enter correct option")     
 def basic_operation():
     while True:
         input("Enter To Continue...")
@@ -142,7 +142,7 @@ def basic_operation():
         Press 6: Delete Created User
         Press 7: Jobs Status
         Press 8: Ping to Google
-        Press 9: Exit to current menu
+        Press 9: Exit to main menu
         """)
     
         ch = input("Enter your choice :- ")
@@ -160,14 +160,14 @@ def basic_operation():
                     print("Currently running user is :- ")
                     os.system("whoami")
         elif int(ch)==4:
-                    print("Enter user name which you want to be create:")
+                    print("Enter user name which you want to create:")
                     createUser =input()
                     os.system("useradd {}" . format(createUser))
-                    print("{} User is created successffuly".format(createUser))
+                    print("{} User is created successfully".format(createUser))
         elif int(ch)==5:
                     os.system("cat /etc/passwd")
         elif int(ch)==6:
-                   print("Enter user name which you want to be delete")
+                   print("Enter user name which you want to delete")
                    delete_user = input()
                    os.system("userdel {}" . format(delete_user))
                    print("{} User deleted successfully".format(delete_user))
